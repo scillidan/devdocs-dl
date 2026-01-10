@@ -31,7 +31,7 @@ jobs:
           echo "tag_name=$CURRENT_DATE" >> $GITHUB_OUTPUT
           echo "release_name=DevDocs Release $CURRENT_DATE" >> $GITHUB_OUTPUT
           echo "Generated tag: $CURRENT_DATE"
-          echo "Generated release name: DevDocs Release $CURRENT_DATE"
+          echo "Generated release name: $CURRENT_DATE"
 
       - name: Determine DOCS_USER
         id: docs_user
@@ -116,18 +116,18 @@ jobs:
           IFS=',' read -ra DOCS <<< "${{ env.DOCS_USER }}"
           html_dir="public/docs"
           md_dir="public/markdown"
-
+      
           for doc_slug in "${DOCS[@]}"; do
             echo "Converting $doc_slug to Markdown..."
-
+      
             if [ -d "$html_dir/$doc_slug" ]; then
               find "$html_dir/$doc_slug" -name "*.html" 2>/dev/null | while read -r filepath; do
                 if [ -f "$filepath" ]; then
                   relpath=${filepath#$html_dir/$doc_slug/}
-                  dirname=$(dirname "$relpath")
+                  dirname=$(dirname -- "$relpath")
                   mkdir -p "$md_dir/$doc_slug/$dirname"
-                  outfile="$md_dir/$doc_slug/$dirname/$(basename "${filepath%.html}.md")"
-
+                  outfile="$md_dir/$doc_slug/$dirname/$(basename -- "${filepath%.html}.md")"
+      
                   if command -v html2markdown &> /dev/null; then
                     html2markdown < "$filepath" > "$outfile"
                     echo "Converted: $filepath -> $outfile"
@@ -141,7 +141,7 @@ jobs:
               echo "Directory $html_dir/$doc_slug not found, skipping..."
             fi
           done
-
+      
           echo "Markdown files generated in $md_dir/"
           tree "$md_dir" | head -20 || echo "No markdown files found"
 
