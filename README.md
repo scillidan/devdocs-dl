@@ -1,7 +1,5 @@
 # template_download_devdocs
 
-[![Create Releases](https://github.com/scillidan/template_download_devdocs/actions/workflows/releases.yml/badge.svg)](https://github.com/scillidan/template_download_devdocs/actions/workflows/releases.yml)
-
 ## Usage
 
 1. **Use this template** → Create a new repository
