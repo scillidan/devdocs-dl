@@ -1,5 +1,7 @@
 # template_download_devdocs
 
+[![Create Releases](https://github.com/scillidan/template_download_devdocs/actions/workflows/releases.yml/badge.svg)](https://github.com/scillidan/template_download_devdocs/actions/workflows/releases.yml)
+
 ## Usage
 
 1. **Use this template** → Create a new repository
@@ -26,4 +28,11 @@ By default, this workflow downloads:
 When running the workflow manually, you can specify a custom list in the "custom_docs_list" field.
 
 ### Option 3: Edit Workflow File
-Modify the default value in `.github/workflows/create-release.yml`:
+Modify the default value in `.github/workflows/releases.yml`:
+
+## Output
+
+Each run creates a GitHub Release with:
+- `devdocs-docs-all.txt` - All available documents list
+- `devdocs-docs-user-html.zip` - HTML format
+- `devdocs-docs-user-md.zip` - Markdown format (if converted)
