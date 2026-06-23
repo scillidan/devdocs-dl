@@ -1,4 +1,4 @@
-# template_download_devdocs
+# action_devdocs_dl
 
 ## Usage
 
