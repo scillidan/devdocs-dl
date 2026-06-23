@@ -1,4 +1,4 @@
-# action_devdocs_dl
+# [action_devdocs_dl](https://github.com/scillidan/action_devdocs_dl)
 
 ## Usage
 
