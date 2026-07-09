@@ -1,4 +1,4 @@
-# [devdocs_dl](https://github.com/scillidan/devdocs_dl)
+# [devdocs-dl](https://github.com/scillidan/devdocs-dl)
 
 A GitHub Actions template that downloads DevDocs documentation and publishes it as ZIP archives to GitHub Releases.
 
@@ -28,7 +28,7 @@ By default, this workflow downloads:
 When running the workflow manually, you can specify a custom list in the "custom_docs_list" field.
 
 ### Option 3: Edit Workflow File
-Modify the default value in `.github/workflows/releases.yml`:
+Modify the default value in `.github/workflows/release.yml`:
 
 ## Output
 
