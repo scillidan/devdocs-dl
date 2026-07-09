@@ -1,4 +1,6 @@
-# [action_devdocs_dl](https://github.com/scillidan/action_devdocs_dl)
+# [devdocs_dl](https://github.com/scillidan/devdocs_dl)
+
+A GitHub Actions template that downloads DevDocs documentation and publishes it as ZIP archives to GitHub Releases.
 
 ## Usage
 
